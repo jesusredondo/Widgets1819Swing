@@ -84,10 +84,11 @@ public class VentanaPrincipal {
 	public void inicializarListeners(){
 		bDialogo.addActionListener(e->{
 			DialogSelectorColor dialog = new DialogSelectorColor(bDialogo, panelColor.getBackground());
+			dialog.setVisible(true);
 			dialog.addWindowListener(new WindowAdapter() {
 				@Override
 				public void windowClosed(WindowEvent arg0) {
-					System.out.println(dialog.getColor());
+					panelColor.setBackground(dialog.getColor());
 				}
 			});	
 		});
